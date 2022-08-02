@@ -1,0 +1,350 @@
+/*logo form TPS*/
+.dashboard .dash-content{
+    padding-top: 50px;
+}
+.dash-content .title{
+    display: flex;
+    align-items: center;
+    margin: 60px 0 20px 0;
+}
+.dash-content .title .text{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+.dash-content .title i{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: var(--box4-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+/*---------------------------------------------*/
+/*logo isi data*/
+.dash-data .title{
+    display: flex;
+    align-items: center;
+    margin: 40px 0 20px 0;
+}
+.dash-data .title .text{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+.dash-data .title i{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: var(--box9-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+/*---------------------------------------------*/
+/*card isi data*/
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    border: solid var(--box4-color);
+    background-clip: border-box;
+    border-radius: 15px 15px 15px 15px;
+}
+.card-body{
+    flex: 1 1 auto;
+}
+/*---------------------------------------------*/
+/*Text*/
+.title{
+    padding: 10px 0 10px 10px;
+}
+.title-1{
+    position: relative;
+    margin: 18px 0 20px -72px;
+}
+.title-ket{
+    padding: 33px 0 10px 10px;
+}
+.text{
+    color: var(--text4-color);
+    margin-left: 15px;
+    font-size: 22;
+/*---------------------------------------------*/
+/*Form Control*/
+}
+.praf{
+    color: var(--text4-color);
+    font-size: 22;
+    font-weight: bold;
+    font-family: serif;
+    margin-left: 10px;
+}
+.form-control-1{
+    display: block;
+    width: 97%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline-color: var(--box4-color);
+    appearance: none;
+    border-color: var(--box4-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-control-dua{
+    display: block;
+    width: 450px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline-color: var(--box4-color);
+    appearance: none;
+    border-color: var(--box4-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/*---------------------------------------------*/
+/* SUB CLASS */
+.sub-class{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.sub{
+    margin-left: 33px;
+    position: relative;
+    display: block;
+    width: 95.5%;
+}
+/*Button*/
+.tambah {
+    margin-top: 20px;
+    background-color: var(--box4-color);
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    font-size: 18;
+    width: 18%;
+}
+.Ubah {
+    margin-top: 20px;
+    background-color: #F9D923;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    font-size: 18;
+    width: 18%;
+}
+.Reset {
+    margin-top: 20px;
+    background-color: #EB5353;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    font-size: 18;
+    width: 18%;
+}
+.button{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: space-around;
+    margin-bottom: 20px;
+}
+.cari {
+    display: block;
+    width: 7rem;
+    margin-right: 22rem;
+    margin-top: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #FFF;
+    background-clip: padding-box;
+    outline-color: var(--box4-color);
+    appearance: none;
+    border-color: var(--box4-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/*---------------------------------------------*/
+/*Select Box*/
+.select-box {
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.select,
+.label {
+    color: #414141;
+    display: block;
+    font: 400 17px/2em 'Source Sans Pro', sans-serif;
+}
+.select {
+    display: block;
+    width: 450px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline-color: var(--box4-color);
+    appearance: none;
+    border-color: var(--box4-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.select-1{
+    display: block;
+    width: 97%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline-color: var(--box4-color);
+    appearance: none;
+    border-color: var(--box4-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.select-box1 {
+    background: #ececec;
+}
+.label {
+    position: relative;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.open .label::after {
+     content: "▲";
+}
+.label::after {
+    content: "▼";
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 15px;
+    border-left: 5px solid #fff;
+}
+/*---------------------------------------------*/
+/*Box Upload*/
+.upload-file{
+    display: block;
+    width: 450px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline-color: var(--box4-color);
+    appearance: none;
+    border-color: var(--box4-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/*---------------------------------------------*/
+/*Radio Button*/
+.radio{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-left: 6px;
+}
+.radio-class{
+    position: relative;
+    align-items: center;
+    margin: 18px 0 20px 6px;
+}
+.form-check-input {
+    --size: 20px;
+    min-width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: #fff;
+    cursor: pointer;
+    margin: 0 10px;
+    position: relative;
+    padding-left: var(--size);
+}
+.form-check-label {
+    color: var(--text4-color);
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 18;
+}
+.form-check-label1 {
+    color: #1D5C63;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 18;
+}
+:root{
+    accent-color : #696;
+}
+/*---------------------------------------------*/
