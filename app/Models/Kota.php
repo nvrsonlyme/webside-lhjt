@@ -14,13 +14,14 @@ class Kota extends Model
      */
     protected $table = "kotas";
     protected $fillable = [
-        'id',
-        'name',
+        'kota_id',
+        'name_kota',
     ];
+    protected $primaryKey = 'kota_id';
 
     public function getRouteKey()
     {
-        return 'name';
+        return view('name_kota');
     }
 
 }

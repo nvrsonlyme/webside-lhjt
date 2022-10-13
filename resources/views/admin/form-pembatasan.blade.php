@@ -8,7 +8,7 @@
     <div class="overview">
         <div class="title">
             <i class="uil uil-comments"></i>
-            <span class="text">Form KBRL</span>
+            <span class="text">Form Pembatasan</span>
         </div>
     </div>
 </div>
@@ -18,72 +18,131 @@
     @csrf
 <div class="card">
     <div class="card-body">
-    <div class="data-class">
-        <div class="title">
-            <label class="text">Kecamatan</label>
-            <input name="kecamatan" id="kecamatan" class="form-control-side1">
-        </div>
-        <div class="title">
-            <span class="text">Tanggal</span>
-            <input class="form-control-side1" type="date" name="tgl">
-        </div>
-        <div class="title">
-            <label class="text">Jumlah Retail</label>
-            <input name="jml_retail" id="jml-retail" class="form-control-side1" type="number" placeholder="Lokasi">
-        </div>
-        <!-- side body -->
+        <div class="data-class">
+            <div class="sub-class">
+                <div class="select-box">
+                    <label class="text">Lokasi Kegiatan Pembatasan Timbulan Sampah</label>
+                    <select class="select" name="lokasi_kegiatan" id="select-box1" required>
+                        <option value="" hidden>Pilih Lokasi</option>
+                        <option value="Sekolah">Sekolah</option>
+                        <option value="Perkantoran">Perkantoran</option>
+                        <option value="Pasar">Pasar</option>
+                        <option value="Fasilitas Pelayanan Kesehatan (RS/Puskesmas/Klinik)">Fasilitas Pelayanan Kesehatan (RS/Puskesmas/Klinik)</option>
+                        <option value="Retail Modern/Swalayan/Mini Market">Retail Modern/Swalayan/Mini Market</option>
+                        <option value="Tempat Ibadah">Tempat Ibadah</option>
+                    </select>
+                </div>
+                <div class="title">
+                    <span class="text">Nama Lokasi</span>
+                    <input class="form-control-side1" type="text" name="nama_lokasi" required>
+                </div>
+            </div>
+            <div class="sub-class">
+                <div class="title">
+                    <label class="text">Alamat</label>
+                    <input name="alamat" id="alamat" class="form-control-side1" type="text" required>
+                </div>
+                <div class="title">
+                    <label class="text">RT</label>
+                    <input name="rt" id="rt" class="form-control-side1" type="number" required>
+                </div>
+            </div>
+            <div class="sub-class">
+                <div class="title">
+                    <label class="text">RW</label>
+                    <input name="rw" id="rw" class="form-control-side1" type="number" required>
+                </div>
+                <div class="select-box">
+                    <label class="text">Kota</label>
+                    <select class="select" name="kota_id" list="select-box1" id="kota-dd" required>
+                        <option value="" hidden>Pilih Kota</option>
+                        @foreach ($datas as $kota)
+                            <option value="{{ $kota->kota_id }}">
+                                {{ $kota->name_kota }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="sub-class">
+                <div class="select-box">
+                    <label class="text">Kecamatan</label>
+                    <select class="select" name="kec_id" list="select-box1" id="kec-dd" required>
+                        <option value="" hidden>Pilih Kecamatan</option>
+                    </select>
+                </div>
+                <div class="select-box">
+                    <label class="text">Kelurahan</label>
+                    <select class="select" name="kel_id" list="select-box1" id="kel-dd" required>
+                        <option value="" hidden>Pilih Kelurahan</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sub-class">
+                <div class="title">
+                    <label class="text">Latitude</label>
+                    <input name="lat" id="latitude" class="form-control-side1" type="number" readonly>
+                </div>
+                <div class="title">
+                    <label class="text">Longitude</label>
+                    <input name="long" id="longitude" class="form-control-side1" type="number" readonly>
+                </div>
+            </div>
+            <div class="sub-class">
+                <div class="cari">
+                    <input type="button" value="Cari Lokasi" class="btn cari" id="get-location">
+                </div>
+            </div>
+            <!-- side body -->
             <div class="card-body-side">
             <div class="data-class">
                 <div class="title">
-                    <label class="text1">1. Apakah perusahaan retail menerapkan program kantong plastik berbayar?</label>
-                    <div class="radio">
-                        <input type="radio" class="form-check-input" id="ada" name="P1" value="Ya" checked>
-                        <label class="form-check-label" for="Ya">Ya</label>
-                        <input type="radio" class="form-check-input" id="tdk" name="P1" value="Tidak">
-                        <label class="form-check-label" for="Tidak">Tidak</label>
+                    <label class="text1">Botol Sekali Pakai</label>
+                    <div class="sub-class">
+                        <div class="title">
+                            <label class="text1">Jumlah Sampah Sebelum Ada Pembatasan</label>
+                            <input name="botol_sekali_pakai_sebelum" id="Botol_Sekali_Pakai_Sebelum" class="form-control-side1" type="number" required>
+                        </div>
+                        <div class="title">
+                            <label class="text1">Jumlah Sampah Setelah Ada Pembatasan</label>
+                            <input name="botol_sekali_pakai_setelah" id="Botol_Sekali_Pakai_Setelah" class="form-control-side1" type="number" required>
+                        </div>
+                   </div>
+                </div>
+                <div class="title">
+                    <label class="text1">Kotak atau Plastik Makan</label>
+                    <div class="sub-class">
+                        <div class="title">
+                            <label class="text1">Jumlah Sampah Sebelum Ada Pembatasan</label>
+                            <input name="kotak_plastik_makanan_sebelum" id="kotak_Plastik_Makanan_Sebelum" class="form-control-side1" type="number" required>
+                        </div>
+                        <div class="title">
+                            <label class="text1">Jumlah Sampah Setelah Ada Pembatasan</label>
+                            <input name="kotak_plastik_makanan_setelah" id="kotak_Plastik_Makanan_Setelah" class="form-control-side1" type="number" required>
+                        </div>
+                   </div>
+                </div>
+                    <div class="title">
+                        <label class="text1">Lainnya</label>
                     </div>
-                </div>
-                <div class="title">
-                    <label class="text1">2. Apakah perusahaan retail masih menyediakan kantong plastik sekali pakai?</label>
-                    <div class="radio">
-                        <input type="radio" class="form-check-input" id="ada" name="P2" value="Ya" checked>
-                        <label class="form-check-label" for="Ya">Ya</label>
-                        <input type="radio" class="form-check-input" id="tdk" name="P2" value="Tidak">
-                        <label class="form-check-label" for="Tidak">Tidak</label>
+                    <div class="title">
+                        <input name="lainnya" id="lainnya" type="text" class="form-control-side" placeholder="Lainnya">
                     </div>
-                </div>
-                <div class="title">
-                    <label class="text1">3. Apakah perusahaan retail menyediakan kantong belanja ramah lingkungan?</label>
-                    <div class="radio">
-                        <input type="radio" class="form-check-input" id="ada" name="P3" value="Ya" checked>
-                        <label class="form-check-label" for="Ya">Ya</label>
-                        <input type="radio" class="form-check-input" id="tdk" name="P3" value="Tidak">
-                        <label class="form-check-label" for="Tidak">Tidak</label>
+                <div class="sub-class">
+                    <div class="title">
+                        <label class="text1">Jumlah Sampah Sebelum Ada Pembatasan</label>
+                        <input name="lainnya_sebelum" id="Lainnya_Sebelum" class="form-control-side1" type="number">
                     </div>
-                </div>
-
-                <div class="title">
-                    <label class="text1">4. Jumlah kantong belanja ramah lingkungan yang dijual/diberikan ke konsumen</label>
-                    <input name="P4" id="jml-jualkantong" class="form-control-side" type="text" placeholder="Lembar/Bulan">
-                </div>
-                <div class="title">
-                    <label class="text1">5. Jumlah Kantong Belanja Sekali Pakai Yang Tidak Diberikan kepada konsumen Bulan ini</label>
-                    <input name="P5" id="jml-sekalipakai" class="form-control-side" type="text" placeholder="Lembar/Bulan">
-                </div>
-                <div class="title">
-                    <label class="text1">6. Berat total Kantong Belanja yang tidak diberikan kepada Konsumen pada Bulan ini</label>
-                    <input name="P6" id="brt-kantongbelanja" class="form-control-side" type="text" placeholder="Gram">
-                </div>
-                <div class="title">
-                    <label class="text1">7. Total Pengurangan Kantong Belanja Sekali Pakai pada Bulan ini</label>
-                    <input name="P7" id="ttl-pengurangan" class="form-control-side" type="text" placeholder="Kilogram">
+                    <div class="title">
+                        <label class="text1">Jumlah Sampah Setelah Ada Pembatasan</label>
+                        <input name="lainnya_setelah" id="Lainnya_Setelah" class="form-control-side1" type="number">
+                    </div>
                 </div>
             </div>
         </div>
         <!-- end -->
+        </div>
     </div>
-
-</div>
 </div>
 <!-- end -->
 <!-- Button -->

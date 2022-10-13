@@ -25,7 +25,7 @@ class Kategori
             return Redirect::to('admin.home');
         }
         elseif(Auth::user()->role == 'Pengguna'){
-            return Redirect::to('users.home');
+            return Redirect::to('user.home');
         }
         return redirect('/')->with('error', "Data Tidak Terdaftar");
     }

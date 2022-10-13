@@ -30,11 +30,11 @@
             <div class="sub-class">
                 <div class="title">
                     <span class="text">Tanggal</span>
-                    <input class="form-control-dua" type="date" name="tanggal">
+                    <input class="form-control-dua" type="date" name="tanggal" required>
                 </div>
                 <div class="title">
                     <span class="text">Jenis Lokasi</span>
-                    <select class="form-control-dua" name="Jlokasi" id="Jlokasi">
+                    <select class="form-control-dua" name="Jlokasi" id="Jlokasi" required>
                         <option value="" hidden>Pilih Lokasi</option>
                         <option value="Masyarakat">Masyarakat</option>
                                 <option value="TPS Non 3R">TPS Non 3R</option>
@@ -54,27 +54,27 @@
             <div class="sub-class">
                 <div class="title">
                     <label class="text">Nama Tempat</label>
-                    <input name="nama_tempat" id="nama-tempat" class="form-control-dua">
+                    <input name="nama_tempat" id="nama-tempat" class="form-control-dua" required>
                 </div>
                 <div class="title">
                     <label class="text">RT</label>
-                    <input class="form-control-dua" type="number" name="rt" id="rt">
+                    <input class="form-control-dua" type="number" name="rt" id="rt" required>
                 </div>
             </div>
             <div class="sub-class">
                 <div class="title">
                     <label class="text">RW</label>
-                    <input class="form-control-dua" type="number" name="rw" id="rw">
+                    <input class="form-control-dua" type="number" name="rw" id="rw" required>
                 </div>
                 <div class="title">
                     <label class="text">Jumlah KK</label>
-                    <input class="form-control-dua" type="number" name="jml_kk" id="jml-kk" placeholder="Kepala Keluarga">
+                    <input class="form-control-dua" type="number" name="jml_kk" id="jml-kk" placeholder="Kepala Keluarga" required>
                 </div>
             </div>
             <div class="sub-class">
                 <div class="title">
                     <span class="text">Bank Sampah / LB3</span>
-                    <select class="form-control-dua" list="bank" name="bank_sampah" id="bsampah">
+                    <select class="form-control-dua" list="bank" name="bank_sampah" id="bsampah" required>
                         <option value="" hidden>Pilih Bank Sampah</option>
                         <option>Bank Sampah</option>
                         <option>Limbah B3</option>
@@ -85,21 +85,21 @@
                 </div>
                 <div class="title">
                     <label class="text">Alamat</label>
-                    <input class="form-control-dua" type="text" name="alamat" id="alamat">
+                    <input class="form-control-dua" type="text" name="alamat" id="alamat" required>
                 </div>
             </div>
             <div class="sub-class">
                 <div class="title">
                     <label class="text">Jalan</label>
-                    <input class="form-control-dua" type="text" name="jalan" id="jalan">
+                    <input class="form-control-dua" type="text" name="jalan" id="jalan" required>
                 </div>
                 <div class=title>
                     <label class="text">Kota</label>
-                    <select class="form-control-dua" type="text" name="kota" id="kota-dd">
+                    <select class="form-control-dua" type="text" name="kota_id" id="kota-dd" required>
                         <option value="" hidden>Pilih Kota</option>
                         @foreach ($datas as $kota)
-                        <option value="{{$kota->id}}">
-                            {{$kota->name}}
+                        <option value="{{$kota->kota_id}}">
+                            {{$kota->name_kota}}
                         </option>
                         @endforeach
                     </select>
@@ -108,13 +108,13 @@
             <div class="sub-class">
                 <div class="title">
                     <label class="text">Kecamatan</label>
-                    <select class="form-control-dua" list="camat" name="kecamatan" id="kec-dd">
+                    <select class="form-control-dua" list="camat" name="kec_id" id="kec-dd" required>
                         <option value="" hidden>Pilih Kecamatan</option>
                     </select>
                 </div>
                 <div class="title">
                     <label class="text">Kelurahan</label>
-                    <select class="form-control-dua" list="Kelurahan" name="kelurahan" id="kel-dd">
+                    <select class="form-control-dua" list="Kelurahan" name="kel_id" id="kel-dd" required>
                         <option value="" hidden>Pilih Kelurahan</option>
                     </select>
                 </div>
@@ -133,7 +133,7 @@
                 <div class="title">
                     <div class="radio-class2">
                         <label class="text">Status Bank Sampah</label>
-                        <div class="radio">
+                        <div class="radio" required>
                             <input type="radio" class="form-check-input" id="aktif" name="status_banksampah" value="Aktif" checked>
                             <label class="form-check-label" for="Aktif">Aktif</label>
                             <input type="radio" class="form-check-input" id="tdkaktif" name="status_banksampah" value="Tidak Aktif">
@@ -283,7 +283,7 @@
             <div class="sub-class">
                 <div class="title">
                     <span class="text1">Yang Mengelola</span>
-                    <select class="form-control-kompo" list="pengelola" name="mengelolah" id="mengelolah">
+                    <select class="form-control-kompo" list="pengelola" name="mengelolah" id="mengelolah" required>
                         <option value="" hidden>Pilih Opsi</option>
                         <option>Masyarakat</option>
                         <option>Lembaga Masyarakat (KSM, Koperasi, dll)</option>
@@ -332,7 +332,7 @@
                 </div>
                 <div class="title">
                     <span class="text1">Daerah Cakupan</span>
-                    <select class="form-control-kompo" list="cakupan" name="dcakup" id="dcakup">
+                    <select class="form-control-kompo" list="cakupan" name="dcakup" id="dcakup" required>
                         <option value="" hidden>Pilih Opsi</option>
                         <option value="Seluruh Perkotaan (Kota)">Seluruh Perkotaan (Kota)</option>
                         <option value="Hanya wilayah Ibukota Kabupaten">Hanya wilayah Ibukota Kabupaten</option>
@@ -442,7 +442,7 @@
             <div class="sub-class">
                 <div class="title">
                     <span class="text">Jumlah Sampah</span>
-                    <input class="form-control-jingga" type="number" name="jml_sampah" placeholder="Kg/Hari">
+                    <input class="form-control-jingga" type="number" name="jml_sampah" placeholder="Kg/Hari" required>
                 </div>
                 <div class="title">
                     <span class="text">Jumlah Serdadu</span><!--Jumlah Sampah - Jumlah Sampah Terkelola (Bisa Koma)-->

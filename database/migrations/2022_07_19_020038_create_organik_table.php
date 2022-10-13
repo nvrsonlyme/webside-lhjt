@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('organik', function (Blueprint $table) {
+        Schema::create('organiks', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
             $table->string('JLokasi');
@@ -23,9 +23,9 @@ return new class extends Migration
             $table->integer('jml_kk');
             $table->string('alamat');
             $table->string('jalan');
-            $table->integer('kota');
-            $table->integer('kecamatan');
-            $table->integer('kelurahan');
+            $table->string('kota_id');
+            $table->string('kec_id');
+            $table->string('kel_id');
             $table->string('latitude');
             $table->string('longitude');
             $table->string('no_sk');

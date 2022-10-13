@@ -12,15 +12,6 @@
         </div>
     </div>
 </div>
-<!--
-<div class="dash-data">
-    <div class="overview">
-        <div class="title">
-            <i class="uil uil-clipboard-notes"></i>
-            <span class="text">Isi Data</span>
-        </div>
-    </div>
-</div>-->
 <!-- Isi Data -->
 <form action="{{ route('sampah-spesifik.store') }}" method="POST">
     @csrf
@@ -30,7 +21,7 @@
         <div class="sub-class">
             <div class="title">
                 <span class="text">Tanggal Lapor</span>
-                <input class="form-control-dua" type="date" name="tgl_laporan">
+                <input class="form-control-dua" type="date" name="tgl_lapor" required>
             </div>
             <div class="title">
                 <span class="text">Provinsi</span>

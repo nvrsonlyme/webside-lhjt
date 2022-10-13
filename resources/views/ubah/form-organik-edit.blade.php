@@ -1,6 +1,7 @@
 @extends('layout.main')
 @include('partials.nav')
 <link rel="stylesheet" href="{{ asset('css/style-form-organik.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/sweetalert2.min.css') }}">
 <!--Halaman Organik-->
 @section('container')
     <div class="dash-content">
@@ -29,11 +30,11 @@
                     <div class="sub-class">
                         <div class="title">
                             <span class="text">Tanggal</span>
-                            <input class="form-control-dua" type="date" name="tanggal" value="{{ $organik->tanggal }}">
+                            <input class="form-control-dua" type="date" name="tanggal" value="{{ $organik->tanggal }}" required>
                         </div>
                         <div class="select-box">
                             <span class="text">Jenis Lokasi</span>
-                            <select class="select" name="Jlokasi" id="select-box1">
+                            <select class="select" name="Jlokasi" id="select-box1" required>
                                 <option value="{{ $organik->JLokasi }}" hidden>{{ $organik->JLokasi }}</option>
                                 <option value="Masyarakat">Masyarakat</option>
                                 <option value="TPS Non 3R">TPS Non 3R</option>
@@ -53,69 +54,69 @@
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">Nama Tempat</label>
-                            <input name="nama_tempat" id="nama-tempat" class="form-control-dua" value="{{ $organik->nama_tempat }}">
+                            <input name="nama_tempat" id="nama-tempat" class="form-control-dua" value="{{ $organik->nama_tempat }}" required>
                         </div>
                         <div class="title">
                             <label class="text">RT</label>
-                            <input class="form-control-dua" type="number" name="rt" id="rt" value="{{ $organik->rt }}">
+                            <input class="form-control-dua" type="number" name="rt" id="rt" value="{{ $organik->rt }}" required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">RW</label>
-                            <input class="form-control-dua" type="number" name="rw" id="rw" value="{{ $organik->rw }}">
+                            <input class="form-control-dua" type="number" name="rw" id="rw" value="{{ $organik->rw }}" required>
                         </div>
                         <div class="title">
                             <label class="text">Jumlah KK</label>
                             <input class="form-control-dua" type="number" name="jml_kk" id="jml-kk"
-                                placeholder="Kepala Keluarga" value="{{ $organik->jml_kk }}">
+                                placeholder="Kepala Keluarga" value="{{ $organik->jml_kk }}" required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">Alamat</label>
-                            <input class="form-control-dua" type="text" name="alamat" id="alamat" value="{{ $organik->alamat }}">
+                            <input class="form-control-dua" type="text" name="alamat" id="alamat" value="{{ $organik->alamat }}" required>
                         </div>
                         <div class="title">
                             <label class="text">Jalan</label>
-                            <input class="form-control-dua" type="text" name="jalan" id="jalan" value="{{ $organik->jalan }}">
+                            <input class="form-control-dua" type="text" name="jalan" id="jalan" value="{{ $organik->jalan }}" required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="select-box">
                             <label class="text">Kota</label>
-                            <select class="select" name="kota" list="select-box1" id="kota-dd">
-                                <option value="{{ $organik->kota }}" hidden>{{ $organik->kota }}</option>
+                            <select class="select" name="kota_id" list="select-box1" id="kota-dd" required>
+                                <option value="{{ $organik->kota->kota_id }}" hidden>{{ $organik->kota->name_kota }}</option>
                                 @foreach ($datas as $kota)
-                                    <option value="{{ $kota->id }}">
-                                        {{ $kota->name }}
+                                    <option value="{{ $kota->kota_id }}">
+                                        {{ $kota->name_kota }}
                                     </option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="select-box">
                             <label class="text">Kecamatan</label>
-                            <select class="select" name="kecamatan" list="select-box1" id="kec-dd">
-                                <option value="{{ $organik->kecamatan }}" hidden>{{ $organik->kecamatan }}</option>
+                            <select class="select" name="kec_id" list="select-box1" id="kec-dd" required>
+                                <option value="{{ $organik->kecamatan->kec_id }}" hidden>{{ $organik->kecamatan->name_kec }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="select-box">
                             <label class="text">Kelurahan</label>
-                            <select class="select" name="kelurahan" list="select-box1" id="kel-dd">
-                                <option value="{{ $organik->kelurahan }}" hidden>{{ $organik->kelurahan }}</option>
+                            <select class="select" name="kel_id" list="select-box1" id="kel-dd" required>
+                                <option value="{{ $organik->kelurahan->kel_id }}" hidden>{{ $organik->kelurahan->name_kel }}</option>
                             </select>
                         </div>
                         <div class="title">
                             <label class="text">Latitude</label>
-                            <input id="latitude" type="text" class="form-control-dua @error('latitude') is-invalid @enderror" name="latitude" value="{{ $organik->latitude }}"  readonly>
+                            <input id="latitude" type="text" class="form-control-dua @error('latitude') is-invalid @enderror" name="latitude" value="{{ $organik->latitude }}"  readonly required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">Longitude</label>
-                            <input id="longitude" type="text" class="form-control-dua @error('longitude') is-invalid @enderror" name="longitude" value="{{ $organik->longitude }}" readonly>
+                            <input id="longitude" type="text" class="form-control-dua @error('longitude') is-invalid @enderror" name="longitude" value="{{ $organik->longitude }}" readonly required>
                         </div>
                         <div class="title">
                             <label class="text">NO SK</label>
@@ -186,7 +187,7 @@
         <div class="card-body-sd">
             <div class="title-1">
                 <span class="text">Jumlah Sampah</span>
-                <input class="form-control-blue" type="number" name="jml_sampah" value="{{ $organik->jml_sampah }}" placeholder="Kg/Hari">
+                <input class="form-control-blue" type="number" name="jml_sampah" value="{{ $organik->jml_sampah }} required" placeholder="Kg/Hari">
             </div>
             <div class="title-1">
                 <span class="text">Jumlah Serdadu</span>
@@ -802,7 +803,7 @@
                     </div>
                     <div class="title-sub">
                         <span class="text1">Yang Mengelola</span>
-                        <select class="form-control-dua" list="pengelola" name="mengelolah" id="mengelolah">
+                        <select class="form-control-dua" list="pengelola" name="mengelolah" id="mengelolah" required>
                             <option value="{{ $organik->mengelolah }}" hidden>{{ $organik->mengelolah }}</option>
                             <option>Masyarakat</option>
                             <option>Lembaga Masyarakat (KSM, Koperasi, dll)</option>
@@ -864,7 +865,7 @@
                 <div class="sub-class">
                     <div class="title-sub">
                         <span class="text1">Daerah Cakupan</span>
-                        <select class="form-control-dua" list="cakupan" name="dcakup" id="dcakup">
+                        <select class="form-control-dua" list="cakupan" name="dcakup" id="dcakup" required>
                             <option value="{{ $organik->dcakup }}" hidden>{{ $organik->dcakup }}</option>
                             <option value="Seluruh Perkotaan (Kota)">Seluruh Perkotaan (Kota)</option>
                             <option value="Hanya wilayah Ibukota Kabupaten">Hanya wilayah Ibukota Kabupaten</option>
@@ -938,9 +939,22 @@
     </div>
     <!-- Button -->
     <div class="button">
-        <input type="submit" value="Simpan" class="btn Tambah">
-    </div>
+        <input type="submit" value="Simpan" class="btn Tambah" id="tombol">
     </form>
     <!-- end -->
 @endsection
+@section('sweetalert')
+<script>
+    $('#tombol').click(function(){
+        Swal.fire({
+            position: 'middle-center',
+            icon: 'success',
+            title: 'Data Berhasil Diubah',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    });
+</script>
+@endsection
+
 

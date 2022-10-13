@@ -28,11 +28,11 @@
                     <div class="sub-class">
                         <div class="title">
                             <span class="text">Tanggal</span>
-                            <input class="form-control-dua" type="date" name="tanggal">
+                            <input class="form-control-dua" type="date" name="tanggal" required>
                         </div>
                         <div class="select-box">
                             <span class="text">Jenis Lokasi</span>
-                            <select class="select" name="Jlokasi" id="select-box1">
+                            <select class="select" name="Jlokasi" id="select-box1" required>
                                 <option value="" hidden>Pilih Lokasi</option>
                                 <option value="Masyarakat">Masyarakat</option>
                                 <option value="TPS Non 3R">TPS Non 3R</option>
@@ -52,49 +52,49 @@
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">Nama Tempat</label>
-                            <input name="nama_tempat" id="nama-tempat" class="form-control-dua">
+                            <input name="nama_tempat" id="nama-tempat" class="form-control-dua" required>
                         </div>
                         <div class="title">
                             <label class="text">RT</label>
-                            <input class="form-control-dua" type="number" name="rt" id="rt">
+                            <input class="form-control-dua" type="number" name="rt" id="rt" required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">RW</label>
-                            <input class="form-control-dua" type="number" name="rw" id="rw">
+                            <input class="form-control-dua" type="number" name="rw" id="rw" required>
                         </div>
                         <div class="title">
                             <label class="text">Jumlah KK</label>
                             <input class="form-control-dua" type="number" name="jml_kk" id="jml-kk"
-                                placeholder="Kepala Keluarga">
+                                placeholder="Kepala Keluarga" required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">Alamat</label>
-                            <input class="form-control-dua" type="text" name="alamat" id="alamat">
+                            <input class="form-control-dua" type="text" name="alamat" id="alamat" required>
                         </div>
                         <div class="title">
                             <label class="text">Jalan</label>
-                            <input class="form-control-dua" type="text" name="jalan" id="jalan">
+                            <input class="form-control-dua" type="text" name="jalan" id="jalan" required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="select-box">
                             <label class="text">Kota</label>
-                            <select class="select" name="kota" list="select-box1" id="kota-dd">
+                            <select class="select" name="kota_id" list="select-box1" id="kota-dd" required>
                                 <option value="" hidden>Pilih Kota</option>
                                 @foreach ($datas as $kota)
-                                    <option value="{{ $kota->id }}">
-                                        {{ $kota->name }}
+                                    <option value="{{ $kota->kota_id }}">
+                                        {{ $kota->name_kota }}
                                     </option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="select-box">
                             <label class="text">Kecamatan</label>
-                            <select class="select" name="kecamatan" list="select-box1" id="kec-dd">
+                            <select class="select" name="kec_id" list="select-box1" id="kec-dd" required>
                                 <option value="" hidden>Pilih Kecamatan</option>
                             </select>
                         </div>
@@ -102,19 +102,19 @@
                     <div class="sub-class">
                         <div class="select-box">
                             <label class="text">Kelurahan</label>
-                            <select class="select" name="kelurahan" list="select-box1" id="kel-dd">
+                            <select class="select" name="kel_id" list="select-box1" id="kel-dd" required>
                                 <option value="" hidden>Pilih Kelurahan</option>
                             </select>
                         </div>
                         <div class="title">
                             <label class="text">Latitude</label>
-                            <input id="latitude" type="text" class="form-control-dua @error('latitude') is-invalid @enderror" name="latitude" value="{{ old('latitude') }}"  readonly>
+                            <input id="latitude" type="text" class="form-control-dua @error('latitude') is-invalid @enderror" name="latitude" value="{{ old('latitude') }}"  readonly required>
                         </div>
                     </div>
                     <div class="sub-class">
                         <div class="title">
                             <label class="text">Longitude</label>
-                            <input id="longitude" type="text" class="form-control-dua @error('longitude') is-invalid @enderror" name="longitude" value="{{ old('longitude') }}" readonly>
+                            <input id="longitude" type="text" class="form-control-dua @error('longitude') is-invalid @enderror" name="longitude" value="{{ old('longitude') }}" readonly required>
                         </div>
                         <div class="title">
                             <label class="text">NO SK</label>
@@ -185,7 +185,7 @@
         <div class="card-body-sd">
             <div class="title-1">
                 <span class="text">Jumlah Sampah</span>
-                <input class="form-control-blue" type="number" name="jml_sampah" placeholder="Kg/Hari">
+                <input class="form-control-blue" type="number" name="jml_sampah" placeholder="Kg/Hari" required>
             </div>
             <div class="title-1">
                 <span class="text">Jumlah Serdadu</span>
@@ -219,7 +219,7 @@
                             <option value="IKAN">IKAN</option>
                             <option value="UNGGAS">UNGGAS</option>
                             <option value="PETERNAKAN">PETERNAKAN</option>
-                            <option value="BSF dan LAINNYA">BSF dan LAINNYA</option>
+                            <option value="LAINNYA">BSF DAN LAINNYA</option>
                         </select>
                     </div>
                     <div class="title-sub">
@@ -563,7 +563,7 @@
                     </div>
                 </div>
                 {{-- LAINNYA --}}
-                <div class="data" id="BSF dan LAINNYA">
+                <div class="data" id="LAINNYA">
                     <div class="card-body-side">
                         <div class="data-class">
                             <div class="bio">
@@ -800,7 +800,7 @@
                     </div>
                     <div class="title-sub">
                         <span class="text1">Yang Mengelola</span>
-                        <select class="form-control-dua" list="pengelola" name="mengelolah" id="mengelolah">
+                        <select class="form-control-dua" list="pengelola" name="mengelolah" id="mengelolah" required>
                             <option value="" hidden>Pilih Opsi</option>
                             <option>Masyarakat</option>
                             <option>Lembaga Masyarakat (KSM, Koperasi, dll)</option>
@@ -862,7 +862,7 @@
                 <div class="sub-class">
                     <div class="title-sub">
                         <span class="text1">Daerah Cakupan</span>
-                        <select class="form-control-dua" list="cakupan" name="dcakup" id="dcakup">
+                        <select class="form-control-dua" list="cakupan" name="dcakup" id="dcakup" required>
                             <option value="" hidden>Pilih Opsi</option>
                             <option value="Seluruh Perkotaan (Kota)">Seluruh Perkotaan (Kota)</option>
                             <option value="Hanya wilayah Ibukota Kabupaten">Hanya wilayah Ibukota Kabupaten</option>
@@ -935,9 +935,21 @@
     </div>
     <!-- Button -->
     <div class="button">
-        <input type="submit" value="Tambah" class="btn Tambah">
+        <input type="submit" value="Simpan" class="btn Tambah" id="simpan">
     </div>
     </form>
     <!-- end -->
 @endsection
-
+@section('sweetalert')
+<script>
+    $('#simpan').click(function(){
+        Swal.fire({
+            position: 'middle-center',
+            icon: 'success',
+            title: 'Data Berhasil Disimpan',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    });
+</script>
+@endsection

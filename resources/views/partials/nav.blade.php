@@ -29,10 +29,10 @@
                 <i class="uil uil-comments"></i>
                 <span class="link-name">Pembatasan</span>
             </a></li>
-            <li><a href="/data-tps">
+            {{-- <li><a href="/data-tps">
                 <i class="uil uil-books"></i>
                 <span class="link-name">Data TPS</span>
-            </a></li>
+            </a></li> --}}
             <li><a href="/sampah-spesifik">
                 <i class="uil uil-gold"></i>
                 <span class="link-name">Sampah Spesifik</span>

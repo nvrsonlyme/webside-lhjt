@@ -4,6 +4,16 @@
 
                     <!--Halaman Organik-->
 @section('container')
+<div class="top">
+    <i class="uil uil-bars sidebar-toggle"></i>
+    <div class="search-box">
+        <i class="uil uil-search"></i>
+        <form action="{{ route('organik.search') }}" method="GET">
+            <input type="search" name="search" placeholder="Search here...">
+        </form>
+    </div>
+    <img src="{{ asset('img/lingkungan-hidup.jpg') }}" alt="">
+</div>
 <!--Logo Form Organik-->
 <div class="dash-content">
     <div class="overview">
@@ -15,11 +25,19 @@
 </div>
 <!--end-->
 <!--Button Tambah-->
-<div class="btn-tambah">
-    <a href="{{ route('anorganik.form-anorganik') }}" class="button-tambah">
-        <i class="uil uil-plus"></i>
-        <span class="link-name">Tambah Data Anorganik</span>
-    </a>
+<div class="up">
+    <div class="btn-tambah">
+        <a href="{{ route('anorganik.form-anorganik') }}" class="button-tambah">
+            <i class="uil uil-plus"></i>
+            <span class="link-name">Tambah Data Anorganik</span>
+        </a>
+    </div>
+    <div class="btn-cetak">
+        <a href="{{ route('cetak-data-anorganik') }}" target="_blank" class="button-cetak">
+            <i class="uil uil-print"></i>
+            <span class="link-name">Cetak Semua Data Organik</span>
+        </a>
+    </div>
 </div>
 <!--end-->
 <!--Isi-->
@@ -35,11 +53,11 @@
                 </div>
             </div>
             <div class="card-body">
-                <h3>Data Anorganik Kelurahan {{ $anorga->kelurahan }}</h3><br>
+                <h3>Data Anorganik Kelurahan {{ $anorga->kelurahan->name_kel }}</h3><br>
                 <table class="view">
                     <tr>
                         <td>Tanggal</td>
-                        <td>{{ $anorga->tanggal }}</td>
+                        <td>{{ date('d-m-Y', strtotime($anorga->tanggal)) }}</td>
                     </tr>
                     <tr>
                         <td>Alamat</td>
@@ -47,16 +65,16 @@
                     </tr>
                     <tr>
                         <td>Kecamatan</td>
-                        <td>{{ $anorga->kecamatan }}</td>
+                        <td>{{ $anorga->kecamatan->name_kec }}</td>
                     </tr>
                     <tr>
                         <td>Kelurahan</td>
-                        <td>{{ $anorga->kelurahan }}</td>
+                        <td>{{ $anorga->kelurahan->name_kel }}</td>
                     </tr>
                 </table>
             </div>
             <div class="card-footer">
-                <a href="#" class="lihat-data">Lihat Data</a>
+                <a href="/anorganik/{{ $anorga->id }}/lihat" class="lihat-data">Lihat Data</a>
                 <a href="/anorganik/{{ $anorga->id }}/ubah" class="ubah">Ubah</a>
                 <form action="/anorganik/{{ $anorga->id }}" method="POST">
                     @csrf
@@ -68,44 +86,61 @@
         @endforeach
     </div>
 </div>
-@else
+@elseif (Auth::user()->kec_id == Auth::user()->id)
+{{--  --}}
+{{-- Pengguna --}}
+{{-- @foreach ($anor as $ano )
+@if ($anorganik->user->user_id == Auth::user()->user_id)
+(Auth::user()->kecamatan->kec_id) --}}
+
 <div class="content-main">
     <div class="card-grid">
+        @foreach ($anorganik as $anorga)
         <article class="card">
             <div class="card-header">
                 <div>
                     <span><img src=""></span>
-                    <h3>Anorganik</h3>
+                    <h2>Data Sampah Anorganik</h2>
                 </div>
             </div>
             <div class="card-body">
-                <p>Collaboration between designers and developers.</p>
+                <h3>Data Anorganik Kelurahan {{ $anorga->kelurahan->name_kel }}</h3><br>
+                <table class="view">
+                    <tr>
+                        <td>Tanggal</td>
+                        <td>{{ date('d-m-Y', strtotime($anorga->tanggal)) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>{{ $anorga->alamat }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kecamatan</td>
+                        <td>{{ $anorga->kecamatan->name_kec }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kelurahan</td>
+                        <td>{{ $anorga->kelurahan->name_kel }}</td>
+                    </tr>
+                </table>
             </div>
             <div class="card-footer">
-                <a href="#" class="lihat-data">Lihat Data</a>
-                <a href="#" class="ubah">Ubah</a>
-                <a href="#" class="hapus">Hapus</a>
+                <a href="/anorganik/{{ $anorga->id }}/lihat" class="lihat-data">Lihat Data</a>
+                <a href="/anorganik/{{ $anorga->id }}/ubah" class="ubah">Ubah</a>
+                <form action="/anorganik/{{ $anorga->id }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="Hapus" class="hapus">
+                </form>
             </div>
         </article>
-        <article class="card">
-            <div class="card-header">
-                <div>
-                    <span><img src=""></span>
-                    <h3>Anorganik</h3>
-                </div>
-            </div>
-            <div class="card-body">
-                <p>Collaboration between designers and developers.</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="lihat-data">Lihat Data</a>
-                <a href="#" class="ubah">Ubah</a>
-                <a href="#" class="hapus">Hapus</a>
-            </div>
-        </article>
+        @endforeach
     </div>
 </div>
 @endif
+
+{{-- @endif
+@endforeach --}}
 
 <!--end-->
 

@@ -1,9 +1,18 @@
 @extends('layout.main')
 @include('partials.nav')
 <link rel="stylesheet" href="{{ asset('css/style-data-tps.css') }}">
-
                     <!--Halaman Data TPS-->
 @section('container')
+<div class="top">
+    <i class="uil uil-bars sidebar-toggle"></i>
+    <div class="search-box">
+        <i class="uil uil-search"></i>
+        <form action="{{ route('organik.search') }}" method="GET">
+            <input type="search" name="search" placeholder="Search here...">
+        </form>
+    </div>
+    <img src="{{ asset('img/lingkungan-hidup.jpg') }}" alt="">
+</div>
 <!--Logo Form Data TPS-->
 <div class="dash-content">
     <div class="overview">

@@ -94,6 +94,18 @@
     word-wrap: break-word;
     padding: 12px;
 }
+.card-grid2{
+    display: block;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    border: solid var(--box2-color);
+    background-clip: border-box;
+    border-radius: 15px 15px 15px 15px;
+    min-width: 0;
+    word-wrap: break-word;
+    padding: 12px;
+}
 .card{
     background-color: var(--c-background-primary);
     box-shadow: 0 1px 8px 0 rgb(0 0 0 / 5%), 0 5px 15px 0 rgb(0 0 0 / 5%);
@@ -139,6 +151,24 @@
     background-color: var(--box-btn2-color);
     color: var(--text1-color);
     box-shadow: 0 1px 8px 0 rgba(26, 118, 146, 0.678), 0 5px 15px 0 rgba(66, 182, 182, 0.822);
+}
+
+.back {
+    display: block;
+    width: 6rem;
+    text-decoration: none;
+    margin-right: 4rem;
+    margin-top: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #FFF;
+    background-color: var(--box2-color);
+    border: none;
+    background-clip: padding-box;
+    appearance: none;
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .ubah{
     text-decoration: none;
@@ -189,3 +219,139 @@
     background: var(--view-color3);
     border-radius: 10px;
 }
+/* ======================================== */
+.view2{
+    width: 100%;
+}
+
+.view2 td {
+    border-bottom: 1px solid #ddd;
+    padding: 1em;
+}
+
+/* EVEN */
+
+.view2 tr:nth-child(even) {
+    background: var(--view-color2);
+}
+
+/* ODD */
+
+.view2 tr:nth-child(odd) {
+    background: var(--view-color3);
+    border-radius: 10px;
+}
+/* Search Bar */
+.dashboard .top .search-box{
+    position: relative;
+    height: 45px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 30px;
+}
+.top .search-box input{
+    position: absolute;
+    border: 1px solid var(--border-color);
+    background-color: var(--panel-color);
+    padding: 0 25px 0 50px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+}
+.top .search-box i{
+    position: absolute;
+    left: 15px;
+    font-size: 22px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--black-light-color);
+}
+.dashboard .top{
+    position: fixed;
+    top: 0;
+    left: 250px;
+    display: flex;
+    width: calc(100% - 250px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: var(--panel-color);
+    transition: var(--tran-05);
+    z-index: 10;
+}
+/* =============================================== */
+
+.up{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.space{
+    padding: 20px 20px 20px 20px;
+}
+/* ========================================= */
+/*-----------------------------------------------*/
+/*button-tambah*/
+.button-cetak{
+	font: inherit;
+	color: inherit;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 1em;
+	height: 40px;
+	border-radius: 8px;
+	line-height: 1;
+	border: 2px solid var(--c-border-primary);
+	color: var(--c-text-action);
+	font-size: 0.875rem;
+	transition: 0.15s ease;
+	background-color: var(--c-background-primary);
+}
+.btn-cetak{
+    border: 2px solid var(--text4-color);
+    border-radius: 10px;
+    padding: 4px;
+    width: 21.3%;
+}
+.btn-cetak{
+    z-index: 2;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+.btn-cetak:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    transition: all 0.3s ease;
+}
+.btn-cetak:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(8, 137, 177, 0.589),
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    color: var(--text4-color);
+}
+.btn-cetak:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+    background: var(--text4-color);
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(62, 175, 71, 0.582),
+      inset -4px -4px 6px 0 rgba(26, 218, 83, 0.5),
+      inset 4px 4px 6px 0 rgba(31, 126, 39, 0.3);
+}
+/*-----------------------------------------------*/
+

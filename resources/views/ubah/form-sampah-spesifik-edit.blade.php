@@ -12,17 +12,9 @@
         </div>
     </div>
 </div>
-<!--
-<div class="dash-data">
-    <div class="overview">
-        <div class="title">
-            <i class="uil uil-clipboard-notes"></i>
-            <span class="text">Isi Data</span>
-        </div>
-    </div>
-</div>-->
 <!-- Isi Data -->
-<form action="{{ route('sampah-spesifik.store') }}" method="POST">
+<form action="/sampah-spesifik/{{ $spesifik->id }}" method="POST">
+    @method('PUT')
     @csrf
 <div class="card">
     <div class="card-body">
@@ -30,7 +22,7 @@
         <div class="sub-class">
             <div class="title">
                 <span class="text">Tanggal Lapor</span>
-                <input class="form-control-dua" type="date" name="tgl_laporan">
+                <input class="form-control-dua" type="date" name="tgl_lapor" value="{{ $spesifik->tgl_lapor }}" required>
             </div>
             <div class="title">
                 <span class="text">Provinsi</span>
@@ -44,32 +36,32 @@
             </div>
             <div class="title">
                 <span class="text">Sampah B3</span>
-                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_b3">
+                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_b3" value="{{ $spesifik->sampah_b3 }}">
             </div>
         </div>
         <div class="sub-class">
             <div class="title">
                 <span class="text">Sampah LB3</span>
-                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_lb3">
+                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_lb3" value="{{ $spesifik->sampah_lb3 }}">
             </div>
             <div class="title">
                 <span class="text">Sampah Akibat Bencana</span>
-                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_akibat_bencana">
+                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_akibat_bencana" value="{{ $spesifik->sampah_akibat_bencana }}">
             </div>
         </div>
         <div class="sub-class">
             <div class="title">
                 <span class="text">Sampah Puing</span>
-                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_puing">
+                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_puing" value="{{ $spesifik->sampah_puing }}">
             </div>
             <div class="title">
                 <span class="text">Sampah Non Periodik</span>
-                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_non_periodik">
+                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_non_periodik" value="{{ $spesifik->sampah_non_periodik }}">
             </div>
         </div>
             <div class="title-1">
                 <span class="text">Sampah Yang Secara Teknologi Belum Dapat Diolah</span>
-                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_tidak_dapat_diolah">
+                <input class="form-control-dua" type="number" placeholder="Ton" name="sampah_tidak_dapat_diolah" value="{{ $spesifik->sampah_tidak_dapat_diolah }}">
             </div>
         </div>
     </div>
@@ -78,8 +70,21 @@
 <!-- end -->
 <!-- Button -->
 <div class="button">
-    <input type="submit" value="Tambah" class="btn Tambah">
+    <input type="submit" value="Simpan" class="btn Tambah" id="tombol">
 </div>
 </form>
 <!-- end -->
+@endsection
+@section('sweetalert')
+<script>
+    $('#tombol').click(function(){
+        Swal.fire({
+            position: 'middle-center',
+            icon: 'success',
+            title: 'Data Berhasil Diubah',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    });
+</script>
 @endsection

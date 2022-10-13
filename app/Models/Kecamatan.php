@@ -13,10 +13,18 @@ class Kecamatan extends Model
      *
      * @var array<int, string>
      */
+
     protected $table = "kecamatans";
     protected $fillable = [
-        'id',
+        'kec_id',
         'kota_id',
-        'name',
+        'name_kec',
     ];
+    protected $primaryKey = 'kec_id';
+
+    public function getRouteKey()
+    {
+        return view('name_kec');
+    }
+
 }

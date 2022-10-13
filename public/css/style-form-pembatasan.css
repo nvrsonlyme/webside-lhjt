@@ -64,7 +64,7 @@
 }
 .form-control-side1{
     display: block;
-    width: 97%;
+    width: 450px;
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 6px;
@@ -121,9 +121,9 @@
 }
 .form-control-side{
     display: block;
-    width: 75%;
-    margin-left: 38px;
-    margin-top: 10px;
+    width: 25%;
+    margin-left: 16px;
+    margin-top: -8px;
     margin-bottom: 6px;
     font-size: 1rem;
     font-weight: 400;
@@ -158,7 +158,7 @@
 /*Button*/
 .tambah {
     margin-top: 20px;
-    background-color: #187498;
+    background-color: var(--box5-color);
     padding: 16px;
     border-radius: 10px;
     font-weight: bold;
@@ -244,4 +244,77 @@
 }
 .radio-class2{
     margin-left: -103px;
+}
+/* ================================== */
+.sub-class{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cari {
+    display: block;
+    width: 7rem;
+    margin-right: 15rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #FFF;
+    background-clip: padding-box;
+    outline-color: var(--box5-color);
+    appearance: none;
+    border-color: var(--box5-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/* ------------BOX---------------- */
+.select-box {
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 16px;
+}
+.select-box1 {
+    background: #ececec;
+}
+.select,
+.label {
+    color: #414141;
+    display: block;
+    font: 400 17px/2em 'Source Sans Pro', sans-serif;
+}
+
+.select {
+    display: block;
+    width: 450px;
+    margin-left: 7px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    outline-color: var(--box5-color);
+    appearance: none;
+    border-color: var(--box5-color);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.open .label::after {
+     content: "▲";
+}
+.label::after {
+    content: "▼";
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 15px;
+    border-left: 5px solid #fff;
 }

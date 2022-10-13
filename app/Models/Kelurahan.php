@@ -14,8 +14,14 @@ class Kelurahan extends Model
      */
     protected $table = "kelurahans";
     protected $fillable = [
-        'id',
+        'kel_id',
         'kec_id',
-        'name',
+        'name_kel',
     ];
+    protected $primaryKey = 'kel_id';
+
+    public function getRouteKey()
+    {
+        return view('name_kel');
+    }
 }

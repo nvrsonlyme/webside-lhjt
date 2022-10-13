@@ -41,6 +41,8 @@
 
     --media-color       : #B2EA70;
     --media1-color      : #A0D995;
+    --media2-color      : #182747;
+    --media3-color      : #ADDDD0;
 
     --view-color        : #D9F8C4;
     --view-color1       : #B8F1B0;
@@ -48,8 +50,8 @@
     --view-color3       : #D6EFED;
     --view-color4       : #FFB344;
     --view-color5       : #FFE194;
-    --view-color6       : #CEE5D0;
-    --view-color7       : #D8F7F4;
+    --view-color6       : #D4F6CC;
+    --view-color7       : #59CE8F;
     --view-color8       : #D8CCA3;
     --view-color9       : #EDDFB3;
     --view-color10      : #CEF7B3;
@@ -109,6 +111,12 @@ body.dark{
     --view-color3       : #3A3B3C;
     --view-color4       : #3A3B3C;
     --view-color5       : #3A3B3C;
+    --view-color6       : #3A3B3C;
+    --view-color7       : #3A3B3C;
+    --view-color8       : #3A3B3C;
+    --view-color9       : #3A3B3C;
+    --view-color10       : #3A3B3C;
+    --view-color11       : #3A3B3C;
     --title-icon-color  : #CCC;
 }
 /* === Custom Scroll Bar CSS === */
@@ -169,6 +177,7 @@ nav .logo-name .logo_name{
     margin-left: 14px;
     transition: var(--tran-05);
 }
+
 nav.close .logo_name{
     opacity: 0;
     pointer-events: none;
@@ -306,35 +315,6 @@ nav.close ~ .dashboard .top{
     font-size: 26px;
     color: var(--text-color);
     cursor: pointer;
-}
-.dashboard .top .search-box{
-    position: relative;
-    height: 45px;
-    max-width: 600px;
-    width: 100%;
-    margin: 0 30px;
-}
-.top .search-box input{
-    position: absolute;
-    border: 1px solid var(--border-color);
-    background-color: var(--panel-color);
-    padding: 0 25px 0 50px;
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-    color: var(--text-color);
-    font-size: 15px;
-    font-weight: 400;
-    outline: none;
-}
-.top .search-box i{
-    position: absolute;
-    left: 15px;
-    font-size: 22px;
-    z-index: 10;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--black-light-color);
 }
 .top img{
     width: 40px;

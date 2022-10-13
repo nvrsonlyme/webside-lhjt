@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('anorganik', function (Blueprint $table) {
+        Schema::create('anorganiks', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
             $table->string('JLokasi');
@@ -88,3 +88,5 @@ return new class extends Migration
         Schema::dropIfExists('anorganik');
     }
 };
+
+

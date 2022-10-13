@@ -8,13 +8,20 @@ use Illuminate\Http\Request;
 
 class LapakPostController extends Controller
 {
+    
+
     public function index(){
         $lapak = Lapak::all();
         return view('admin.lapak', compact(['lapak']));
     }
 
+    public function cetakLapak(){
+        $datalapak = Lapak::all();
+        return view('cetak.cetak-data-lapak', compact(['datalapak']));
+    }
+
     public function create(){
-        $datas = Kota::get(["name", "id"]);
+        $datas = Kota::get(["name_kota", "kota_id"]);
         return view('admin.form-lapak',[
             'datas' => $datas
         ]);
@@ -29,8 +36,16 @@ class LapakPostController extends Controller
 
     public function ubah($id){
         $lapak = Lapak::find($id);
-        $datas = Kota::get(["name", "id"]);
+        $datas = Kota::get(["name_kota", "kota_id"]);
         return view('ubah.form-lapak-edit',[
+            'datas' => $datas
+        ], compact(['lapak']));
+    }
+
+    public function lihat($id){
+        $lapak = Lapak::find($id);
+        $datas = Kota::get(["name_kota", "kota_id"]);
+        return view('lihat.lihat-data-lapak',[
             'datas' => $datas
         ], compact(['lapak']));
     }
@@ -47,4 +62,5 @@ class LapakPostController extends Controller
         $lapak->delete();
         return redirect('/lapak');
     }
+
 }
