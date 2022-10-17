@@ -74,9 +74,9 @@
                 </table>
             </div>
             <div class="card-footer">
-                <a href="/anorganik/{{ $anorga->id }}/lihat" class="lihat-data">Lihat Data</a>
-                <a href="/anorganik/{{ $anorga->id }}/ubah" class="ubah">Ubah</a>
-                <form action="/anorganik/{{ $anorga->id }}" method="POST">
+                <a href="/anorganik/{{ $anorga->id_anorganik }}/lihat" class="lihat-data">Lihat Data</a>
+                <a href="/anorganik/{{ $anorga->id_anorganik }}/ubah" class="ubah">Ubah</a>
+                <form action="/anorganik/{{ $anorga->id_anorganik }}" method="POST">
                     @csrf
                     @method('delete')
                     <input type="submit" value="Hapus" class="hapus">
@@ -86,12 +86,11 @@
         @endforeach
     </div>
 </div>
-@elseif (Auth::user()->kec_id == Auth::user()->id)
-{{--  --}}
+@elseif (Auth::user()->user_id == $anorganik->user_id)
+
 {{-- Pengguna --}}
-{{-- @foreach ($anor as $ano )
-@if ($anorganik->user->user_id == Auth::user()->user_id)
-(Auth::user()->kecamatan->kec_id) --}}
+{{-- (Auth::user()->anorganik()) --}}
+{{-- (Auth::user()->kecamatan->kec_id) --}}
 
 <div class="content-main">
     <div class="card-grid">
@@ -125,9 +124,9 @@
                 </table>
             </div>
             <div class="card-footer">
-                <a href="/anorganik/{{ $anorga->id }}/lihat" class="lihat-data">Lihat Data</a>
-                <a href="/anorganik/{{ $anorga->id }}/ubah" class="ubah">Ubah</a>
-                <form action="/anorganik/{{ $anorga->id }}" method="POST">
+                <a href="/anorganik/{{ $anorga->id_anorganik }}/lihat" class="lihat-data">Lihat Data</a>
+                <a href="/anorganik/{{ $anorga->id_anorganik }}/ubah" class="ubah">Ubah</a>
+                <form action="/anorganik/{{ $anorga->id_anorganik }}" method="POST">
                     @csrf
                     @method('delete')
                     <input type="submit" value="Hapus" class="hapus">
@@ -139,8 +138,6 @@
 </div>
 @endif
 
-{{-- @endif
-@endforeach --}}
 
 <!--end-->
 

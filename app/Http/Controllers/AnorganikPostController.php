@@ -41,31 +41,31 @@ class AnorganikPostController extends Controller
         return redirect('/anorganik');
     }
 
-    public function ubah($id){
-        $anorganik = Anorganik::find($id);
+    public function ubah($id_anorganik){
+        $anorganik = Anorganik::find($id_anorganik);
         $datas = Kota::get(["name_kota", "kota_id"]);
         return view('ubah.form-anorganik-edit',[
             'datas' => $datas
         ], compact(['anorganik']));
     }
 
-    public function lihat($id){
-        $anorganik = Anorganik::find($id);
+    public function lihat($id_anorganik){
+        $anorganik = Anorganik::find($id_anorganik);
         $datas = Kota::get(["name_kota", "kota_id"]);
         return view('lihat.lihat-data-anorganik',[
             'datas' => $datas
         ], compact(['anorganik']));
     }
 
-    public function update($id, Request $request){
-        $anorganik = Anorganik::find($id);
+    public function update($id_anorganik, Request $request){
+        $anorganik = Anorganik::find($id_anorganik);
         // return $request->all();
         $anorganik->update($request->except(['_token', 'submit']));
         return redirect('/anorganik');
     }
 
-    public function destroy($id){
-        $anorganik = Anorganik::find($id);
+    public function destroy($id_anorganik){
+        $anorganik = Anorganik::find($id_anorganik);
         $anorganik->delete();
         return redirect('/anorganik');
     }

@@ -89,7 +89,7 @@
                             <label for="role">Unit Kerja</label>
                             <select name="unit_kerja" id="unit_kerja" class="form-control" required>
                                 <option value="" hidden>-- Pilih Unit Kerja --</option>
-                                <option value="Admin">Admin</option>
+                                {{-- <option value="Admin">Admin</option> --}}
                                 <option value="Cakung">Cakung</option>
                                 <option value="Cipayung">Cipayung</option>
                                 <option value="Ciracas">Ciracas</option>
@@ -127,7 +127,7 @@
                                 <td align="center">Username</td>
                                 <td align="center">Role</td>
                                 <td align="center">Unit Kerja</td>
-                                <td align="center">Kecamatan</td>
+                                {{-- <td align="center">Kecamatan</td> --}}
                                 <td align="center">Aksi</td>
                             </tr>
                             @foreach ($akun as $add )
@@ -135,11 +135,11 @@
                                 <td align="center">{{ $no++ }}</td>
                                 <td align="center">{{ $add->username }}</td>
                                 <td align="center">{{ $add->role }}</td>
-                                <td align="center">{{ $add->unit_kerja }}</td>
+                                {{-- <td align="center">{{ $add->unit_kerja }}</td> --}}
                                 <td align="center">{{ $add->kecamatan->name_kec }}</td>
                                 <td class="text-center" >
-                                    <a href="/home/{{ $add->id }}/ubah" data-toggle="modal" data-target=".bd-example1-modal-sm" class="ubah">Ubah</a>
-                                    <form action="/home/{{ $add->id }}" method="POST">
+                                    <a href="/home/{{ $add->user_id }}/ubah" data-toggle="modal" data-target=".bd-example1-modal-sm" class="ubah">Ubah</a>
+                                    <form action="/home/{{ $add->user_id }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <input type="submit" value="Hapus" class="hapus">

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('anorganiks', function (Blueprint $table) {
-            $table->id();
+            $table->id_anorganik();
             $table->date('tanggal');
             $table->string('JLokasi');
             $table->string('nama_tempat');

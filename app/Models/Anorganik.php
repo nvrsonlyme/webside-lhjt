@@ -10,6 +10,7 @@ class Anorganik extends Model
 {
     use HasFactory;
     protected $table = 'anorganiks';
+    protected $primaryKey = 'id_anorganik';
     // protected $fillabel = [];
     // protected $fillabel = ['','']; bisa satu" label
     protected $guarded = [];
@@ -31,6 +32,6 @@ class Anorganik extends Model
     }
 
     public function user(){
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

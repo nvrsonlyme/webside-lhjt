@@ -20,6 +20,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $table = 'users';
+    protected $primaryKey = 'user_id';
     protected $guarded = [];
 
     /**
@@ -42,7 +43,7 @@ class User extends Authenticatable
     ];
 
     public function anorganik(){
-        return $this->hashMany('App\Anorganik', 'id');
+        return $this->hasMany(Anorganik::class, 'user_id');
     }
     public function kota(){
         return $this->belongsTo(Kota::class, 'kota_id');

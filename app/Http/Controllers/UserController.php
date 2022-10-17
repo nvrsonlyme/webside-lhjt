@@ -14,11 +14,11 @@ class UserController extends Controller
         return view('admin.organik', compact(['users']));
     }
 
-    public function anorganik()
-    {
-        $getdatas = User::get(["id", "nomor_id"]);
-        return view('admin.form-organik',[
-        'getdatas' => $getdatas
-        ]);
-    }
+    // public function anorganik()
+    // {
+    //     $getdatas = User::get(["user_id"]);
+    //     return view('admin.form-organik',[
+    //     'getdatas' => $getdatas
+    //     ]);
+    // }
 }

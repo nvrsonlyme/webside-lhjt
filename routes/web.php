@@ -70,9 +70,9 @@ Route::get('/anorganik', [AnorganikPostController::class, 'index'])->name('anorg
 // })->name('anorganik');
 Route::get('/anorganik/form-anorganik', [AnorganikPostController::class, 'create'])->name('anorganik.form-anorganik');
 Route::post('/anorganik/store', [AnorganikPostController::class, 'store'])->name('anorganik.store');
-Route::get('/anorganik/{id}/ubah', [AnorganikPostController::class, 'ubah'])->name('anorganik.ubah');
-Route::put('/anorganik/{id}', [AnorganikPostController::class, 'update'])->name('anorganik.update');
-Route::delete('/anorganik/{id}', [AnorganikPostController::class, 'destroy'])->name('anorganik.destroy');
+Route::get('/anorganik/{id_anorganik}/ubah', [AnorganikPostController::class, 'ubah'])->name('anorganik.ubah');
+Route::put('/anorganik/{id_anorganik}', [AnorganikPostController::class, 'update'])->name('anorganik.update');
+Route::delete('/anorganik/{id_anorganik}', [AnorganikPostController::class, 'destroy'])->name('anorganik.destroy');
 // Lapak
 Route::get('/lapak', [LapakPostController::class, 'index'])->name('lapak');
 Route::get('/lapak/form-lapak', [LapakPostController::class, 'create'])->name('lapak.form-lapak');
