@@ -86,7 +86,7 @@
         @endforeach
     </div>
 </div>
-@elseif (Auth::user()->user_id == $anorganik->user_id)
+@elseif ($anorganik->user->user_id == Auth::user()->user_id)
 
 {{-- Pengguna --}}
 {{-- (Auth::user()->anorganik()) --}}

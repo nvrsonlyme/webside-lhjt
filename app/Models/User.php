@@ -43,7 +43,7 @@ class User extends Authenticatable
     ];
 
     public function anorganik(){
-        return $this->hasMany(Anorganik::class, 'user_id');
+        return $this->belongsToMany(Anorganik::class, 'id_anorganik');
     }
     public function kota(){
         return $this->belongsTo(Kota::class, 'kota_id');
